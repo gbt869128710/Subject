@@ -8,6 +8,7 @@ $(function () {
             $(this).addClass("h");
         }
     }) //click menus show again click hide
+
     $(".menu").on("click", function () {
         $(".menus").addClass("h");
     }) //menu hide
@@ -20,17 +21,24 @@ $(function () {
     $(".word").fadeIn(2000);
     $(window).on("scroll", function () {
         var w_h = $(window).scrollTop();
+        var t_h = $(window).height();
+        $(".menus").addClass("h"); //scroll menus hide
         if (w_h >= 200 && w_h <
             1000) {
-            $(".left1,.right1").children().fadeIn(1000);
+            $(".left1,.right1").children().fadeIn(1500);
         } else if (w_h >= 1000 && w_h <
             1800) {
-            $(".service").fadeIn(1000);
+            $(".service").fadeIn(1500);
         } else if (w_h >= 2400 && w_h <
             3000) {
-            $(".subject").fadeIn(1000);
-        } else if (w_h >= 2800) {
-            $(".left,.right").children().fadeIn(1000);
+            $(".subject").fadeIn(1500);
+        } else if (w_h >= 2152) {
+            $(".left,.right").children().fadeIn(1500);
+        }
+        if (w_h >= t_h) {
+            $(".anchor").show(); //back to top show
+        } else {
+            $(".anchor").hide(); //back to top hide
         }
     }) //move the scroll, content fadeIn
 
@@ -84,6 +92,27 @@ $(function () {
         }, 1500);
 
     })
-
+    window._bd_share_config = {
+        "common": {
+            "bdSnsKey": {},
+            "bdText": "",
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": "",
+            "bdStyle": "0",
+            "bdSize": "24"
+        },
+        "share": {},
+        "image": {
+            "viewList": ["linkedin", "twi", "people"],
+            "viewText": "分享到：",
+            "viewSize": "16"
+        },
+        "selectShare": {
+            "bdContainerClass": null,
+            "bdSelectMiniList": ["linkedin", "twi", "people"]
+        }
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
 
 })
